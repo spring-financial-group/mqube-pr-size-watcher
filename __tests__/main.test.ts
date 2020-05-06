@@ -2,7 +2,7 @@ import {Checker, Result} from "../src/checker";
 
 test('skips validation if excludeTitle matches', () => {
   const excludeTitle = new RegExp('Skip')
-  const checker = new Checker(20, 10, excludeTitle)
+  const checker = new Checker(1, 0, excludeTitle)
   const result = checker.check({title: 'Skip PR size check', files: [{additions: 100}]})
   expect(result).toBe(Result.ok)
 });
