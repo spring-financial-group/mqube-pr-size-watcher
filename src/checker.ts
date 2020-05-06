@@ -18,9 +18,8 @@ export class Checker {
   check(pr: {title: string; files: {additions: number}[]}): Result {
     if (this.shouldSkip(pr.title)) return Result.ok
 
-    const additions = Checker.getAdditions(pr.files)
-    if (additions > this.errorSize) return Result.error
-    if (additions > this.warningSize) return Result.warning
+    if (pr.files.length >= this.errorSize) return Result.error
+    if (pr.files.length >= this.warningSize) return Result.warning
     return Result.ok
   }
 
