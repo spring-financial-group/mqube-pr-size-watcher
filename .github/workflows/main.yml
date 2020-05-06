@@ -12,6 +12,6 @@ jobs:
           githubToken: ${{ secrets.GITHUB_TOKEN }} # required
           errorSize: 2 # optional
           errorMessage: ':no_entry: PR has more than **{allowed} files changed**. Split it into smaller PRs.' # optional
-          warningSize: 2 # optional
+          warningSize: 1 # optional
           warningMessage: ':warning: PR has more than **{allowed} files changed**. Consider splitting it into smaller PRs.' # optional
           excludeTitle: 'PR_SIZE_SKIP' # to skip validation if PR title matches regex
